@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>LogIn</title>
+
+</head>
+<style>
+	.box{
+		margin-top:200px;
+		color: white;	
+	}
+	.log{
+		height:22px;
+		width: 200px;
+		border-radius:10px;	
+	}
+	.psw{
+		height:22px;
+		width: 200px;
+		border-radius:10px;
+	}
+	input{
+		height: 30px;
+
+	}
+</style>
+<body bgcolor="green">
+	<center>
+		<form action="/vicky.php" class="box" method="post" onsubmit="return headfun();">
+			NAME    :<input type="text" class="log" id="lg" onkeypress="pass();"><br><br>
+			<span id="inv" style="color:red"></span><br>
+			PASSWORD:<input type="password" id="ps"class="psw" onkeypress="psw();"><br><br>
+			<span id="inv3" style="color:red"></span><br>
+			<input type="checkbox" required> Agree to Submit Details <br>
+			<input type="submit">
+		</form>
+</center>
+
+<script>
+	function headfun()
+	{
+		 if(pass() && psw())
+			{
+				return true;
+			}	
+			else
+			{
+				return false;
+			}
+	}
+	function pass()
+	{
+		var fn=document.getElementById("lg").value;
+		var firstpat=/^[a-z,A-Z][a-z, ,A-Z]*$/
+				if(firstpat.test(fn))
+				{
+					if(fn.length>3)
+					{
+						document.getElementById("inv").style.visibility="hidden";
+						document.getElementById("lg").style.border="2px solid pink";
+						return true;
+					}
+					else
+					{
+						document.getElementById("inv").innerHTML="Invalid Name";
+						document.getElementById("lg").style.border="2px solid red";	
+						return false;
+					}
+				}
+				else
+				{	document.getElementById("inv").innerHTML="Invalid Name";
+					document.getElementById("lg").style.border="2px solid red";
+					setTimeout(fn1,3000)
+					return false;
+				}
+			}
+	function fn1()
+	{
+		document.getElementById("inv").style.visibility="hidden";
+		document.getElementById("lg").style.border="2px solid black";
+	}
+	function psw()
+	{
+		var ps=document.getElementById("ps").value;
+		var preg=/^[A-Z a-z]\w{7,14}$/
+		if(preg.test(ps))
+		{
+			if(ps.length<6)
+			{
+
+				document.getElementById("inv3").innerHTML="Invalid Password";
+				document.getElementById("ps").style.border="2px solid red";
+				return false;
+			}
+			else
+			{
+				document.getElementById("inv3").style.visibility="hidden";
+				document.getElementById("ps").style.border="2px solid pink";
+				return true;
+			}
+		}
+		else
+		{	document.getElementById("inv3").innerHTML="Invalid Password";
+			document.getElementById("ps").style.border="2px solid red";
+			setTimeout(psw1,3000);
+			return false;
+		}
+	}
+	function psw1()
+	{
+		document.getElementById("inv3").style.visibility="hidden";
+		document.getElementById("ps").style.border="2px solid black";
+	}
+</script>
+</body>
+</html>

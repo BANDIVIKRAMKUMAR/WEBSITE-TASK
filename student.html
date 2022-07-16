@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		table{
+			font-size: 20px;
+			margin-top: 150px;
+			padding: 10px;
+			background-color: yellow;
+			height: 200px;
+			width: 400px;
+			border-color: 1px solid red;
+		}
+	</style>
+</head>
+<body>
+	<center>
+	<form action="/vicky.php" method="post" onsubmit=" return idno()">
+		<table>
+			<tr><td>ID NUMBER:<input type="text" id="id" onkeypress="idno()"><label id="error1" style="color: 1px solid red;"></label></td></tr>
+			<tr><td>PASSWORD:<input type="password" id="ps"></td></tr>
+			<tr><td><input type="submit" ></td></tr>
+		</table>
+	</form>
+</center>
+<script>
+	function idno()
+	{
+		var n=document.getElementById("id").value;
+		var reg=/[n N][0-9]{6}$/
+		if(reg.test(n))
+		{
+			if(n.length>7)
+			{
+				document.getElementById("error1").style.visibility="hidden";
+				return true;
+			}
+			else
+			{
+				document.getElementById("error1").innerHTML="Invalid  Id";
+				document.getElementById("id").style.border="2px solid red";
+			return false;
+			}
+		else
+		{
+			document.getElementById("error1").innerHTML="Invalid  Id";
+			return false;
+		}
+	}
+</script>
+</body>
+</html>

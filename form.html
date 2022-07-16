@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <script src="form.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>form</title>
+    </head>
+    <body bgcolor="skyblue">
+        <center>
+            <div style="background-color:orange; margin-left:400px; margin-right:400px; border-radius: 30px;">
+                <br>
+            <h1 align="center">Registration form</h1>
+            <form action="/vikram.php   " onsubmit="return validation();" method="post">
+                <table>
+                    <tr>
+                        <td><b>FirstName:</b></td>
+                        <td><input type="text" id="fn" placeholder="Enter Firstname" onkeyup="fname()">
+                        <label style="visibility:hidden;" id="fnerror">Invalid data</label></td>
+                        </tr>
+                    <tr>
+                        <td><br><b>MiddleName :</b></td>
+                        <td><br><input type="text" placeholder="Enter Middlename" id="mn" class="in" onkeyup="mname()">
+                        <label id="mnerror" style="color:red;" colspan="4"></label></td>
+                    </tr>
+                    <tr>
+                        <td><br><b>LastName :</td></b>
+                        <td><br><input type="text" placeholder="Enter lastname" onkeyup="lname()" id="ln">
+                        <label id="lnerror" style="visibility: hidden;">requried</label></td>
+                    </tr>
+                    <tr>
+                        <td><br><b>Full Name</b></td>
+                        <td><br><input type="text" id="fulln" readonly></td>
+                    </tr>
+                    <tr>
+                        <td><br><b>Nation :</b></td>
+                        <td><br><input type="radio" name="nation" id="i" onkeyup="nation()">India
+                        <input type="radio" name="nation" id="u">USA
+                        <label id="ns" style=" visibility:hidden"></label></td>
+                    </tr>
+                    <tr>
+                        <td><br><b>Phone Number :</b></td>
+                        <td><br><input type="text" placeholder="Enter mobile number" id="pn" onkeyup="phn()">
+                        <label id="pnerror" style="visibility: hidden;">requried</label></td>
+                    </tr>
+                    <tr>
+                        <td><br><b>password :</b></td>
+                        <td><br><input type="password" id="pw">
+                        <label id="pwerror" style="visibility: hidden;" onkeydown="password()"></label></td>
+                    </tr>
+                    <tr>
+                        <td><br><b>Hobbies : </b></td>
+                        <td><br><input type="checkbox" id="h1">Sleeping
+                            <br><input type="checkbox" id="h2">Playing games
+                            <br><input type="checkbox" id="h3">watching movies
+                            <br><input type="checkbox" id="h4">reading books
+                            <label id="herror" style="visibility:hidden" onkeyup="hobbies()"></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><br><b>Email :</b></td>
+                        <br><td><br><input type="text" id="mail" onkeyup="mail()">
+                        <label id="mailerror" style="visibility: hidden;"></label></td>
+                    </tr>
+                    <tr>
+                        <td><br><b>Date of birth :</b></td>
+                        <td><br><input type="text" placeholder="august 8 2003" id="dob"></td>
+                    </tr>
+                    <tr>
+                        <td><br><b>Address :</b></td>
+                        <td><br><textarea cols="10" rows="10" id="ad"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="c"></td> 
+                        <td>I agree all the above terms and conditions.</td>
+                        
+                    </tr>
+                    <tr>
+                        
+                        <td><br><input type="submit" value="Submit"></td>
+                        <td><br><input type="submit" value=" reset" id="r" onclick="reset()"></td>
+                    </tr>
+                </table>
+            </form>
+    </body>
+</html>
